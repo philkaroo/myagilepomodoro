@@ -6,11 +6,11 @@
     <meta name="description" content="" />
     <meta name="keywords" content="pomodoro, agile, project management, time management" />
     <link href="http://fonts.googleapis.com/css?family=Ebrima:200,300,400,600" rel="stylesheet" type="text/css" />
-    <!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/skel.min.js"></script>
-    <script src="js/skel-panels.min.js"></script>
-    <script src="js/init.js"></script>
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-panels.min.js"></script>
+	<script src="js/init.js"></script>
     <noscript>
     <link rel="stylesheet" href="css/skel-noscript.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -20,6 +20,31 @@
     <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!-- Pop-up css for image overlay -->
+	<!-- see https://www.jqueryscript.net/lightbox/Image-Lightbox-Popup-Plugin-jQuery.html -->
+	<style type="text/css">
+		.img-overlay {
+		  position: fixed;
+		  top: 90px;
+		  max-height: 80%;
+		  left: 50%;
+		  transform: translate(-50%, 0) scale(0, 0);
+		  z-index: 10;
+		  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		  transition: all .3s ease;
+		}
+
+		.overlay-dark {
+		  top: 0;
+		  position: fixed;
+		  background-color: #000;
+		  opacity: .9;
+		  width: 100%;
+		  height: 100%;
+		  z-index: 5;
+		  display: none;
+		}
+	</style>
   </head>
   <body>
     <!-- Header -->
@@ -45,7 +70,7 @@
         </nav>
 		<!--div id="twitter">
 		<a href="https://twitter.com/philokaroo" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @philokaroo</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 		</div-->
       </div>      
     </div>
@@ -54,12 +79,12 @@
       <!-- Intro -->
       <section id="home" class="one">
         <div class="container">
-          <img src="images/myagilepomodoro.png" alt="" /><a style="border-bottom: 0px" href="http://www.softpedia.com/get/Desktop-Enhancements/Clocks-Time-Management/myPomodoro.shtml"><img src="images/softpedia_100_free.png" alt="" /></a>
+          <img src="images/myagilepomodoro.png" alt="" /><a style="border-bottom: 0px" href="http://www.softpedia.com/get/Desktop-Enhancements/Clocks-Time-Management/myPomodoro.shtml" target="_blank"><img src="images/softpedia_100_free.png" alt="" /></a>
           <header>
             <h2 class="alt"><strong>myAgilePomodoro</strong></h2>            
             <h3 class="alt">Agile Time Management Freeware</h3>
           </header>
-          <p>myAgilePomodoro is a time management software that brings you the best of two worlds: Agile's most common practices and the <a href="http://pomodorotechnique.com/">Pomodoro Technique&#174;</a>.<br><br>
+          <p>myAgilePomodoro is a time management software that brings you the best of two worlds: Agile's most common practices and the <a href="http://pomodorotechnique.com/" target="_blank">Pomodoro Technique&#174;</a>.<br><br>
             mAP is a free open-source, GPLv3, Java 6 to 14, 32/64-bit, utf-8, multilingual,<br>
             standalone and portable application (no installer).</p>
           <footer>
@@ -102,13 +127,13 @@
           <div class="row">
             <div class="4u">
               <article class="item">
-                <a href="images/3-iterationbacklog.png"><img src="images/3-iterationbacklog.png" alt="" class="image full" /></a>
+                <img src="images/3-iterationbacklog.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Iteration</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="images/4-releasebacklog.png"><img src="images/4-releasebacklog.png" alt="" class="image full" /></a>
+                <img src="images/4-releasebacklog.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Release</h3>
                 </header>
@@ -116,13 +141,13 @@
             </div>
             <div class="4u">
               <article class="item">
-                <a href="images/1-timer.png"><img src="images/1-timer.png" alt="" class="image full" /></a>
+                <img src="images/1-timer.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Timer</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="images/5-charts.png"><img src="images/5-charts.png" alt="" class="image full" /></a>
+                <img src="images/5-charts.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Charts</h3>
                 </header>
@@ -130,13 +155,13 @@
             </div>
             <div class="4u">
               <article class="item">
-                <a href="images/2-backlog.png"><img src="images/2-backlog.png" alt="" class="image full" /></a>
+                <img src="images/2-backlog.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Backlog</h3>
                 </header>
               </article>
               <article class="item">
-                <a href="images/6-preferences.png"><img src="images/6-preferences.png" alt="" class="image full" /></a>
+                <img src="images/6-preferences.png" alt="" class="image full img-popup" />
                 <header>
                   <h3>Preferences</h3>
                 </header>
@@ -153,7 +178,7 @@
         <div class="container">
           <header>
             <h2>Pomodoro Technique&#174;'s <span style="background-color: white">rules*</span> vs <span style="color:#D83636; background-color: white">mAP</span></h2>
-			* as per the official book of the Pomodoro Technique®.
+			* as per the <a href="https://francescocirillo.com/products/the-pomodoro-technique-book-us-edition" target="_blank">official book of the Pomodoro Technique&#174;</a>.
           </header>
 		  <p>Although mAP can be used to strictly follow the rules, it is flexible in many ways.</p>		  
           <div class="row">
@@ -389,7 +414,7 @@
             <div class="6u">
               <article class="item">
                 <header>
-                  <h3 style="color:#D83636">mAP may be used to monitor Sprint planning, daily Scrum, Sprint review and Sprint retrospective meetings with the Pomodoro Technique® (having breaks during meetings is not a bad idea).<br>
+                  <h3 style="color:#D83636">mAP may be used to monitor Sprint planning, daily Scrum, Sprint review and Sprint retrospective meetings with the Pomodoro Technique&#174; (having breaks during meetings is not a bad idea).<br>
 					Simply create tasks with a made-up type and set the estimate (time boxing). In the preferences, set the length of pomodoros and breaks that fits the meeting best.
 				  </h3>
                 </header>
@@ -509,9 +534,13 @@
   <div class="copyright">
     <p>&copy; myAgilePomodoro. All rights reserved.</p>
     <ul class="menu">
-      <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
     </ul>
   </div>
 </div>
+<!-- image overlay for image popup -->
+<div class="overlay-dark"></div>
+<img class="img-overlay">
+<script src="js/image-popup.js" type="text/javascript"></script><!-- requires jquery min-->
 </body>
 </html>
