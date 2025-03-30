@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema version="1.0"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">  
+  
+  <!-- group --> 
+  <xs:group name="data">
+    <xs:sequence>
+      <xs:element name="u" type="xs:boolean"/><!-- 0 (false) or 1 (true - unplanned or interrruption) -->
+      <xs:element name="date" type="xs:string"/><!-- date of creation (Agile + Pomodoro mode) or schedule date (Pomodoro mode) -->
+      <xs:element name="datecompleted" type="xs:string"/>
+      <xs:element name="title" type="xs:string"/>
+      <xs:element name="estimate" type="xs:nonNegativeInteger"/><!-- 0, 1, 2... -->
+      <xs:element name="overestimate" type="xs:nonNegativeInteger"/><!-- 0, 1, 2... -->
+      <xs:element name="real" type="xs:nonNegativeInteger"/><!-- 0, 1, 2... -->
+      <xs:element name="diffi" type="xs:integer" minOccurs="0" maxOccurs="1"/><!-- ...-1, 0, +1... : Diff I -->
+      <xs:element name="diffii" type="xs:integer" minOccurs="0" maxOccurs="1"/><!-- ...-1, 0, +1...: Diff II -->
+      <xs:element name="internal" type="xs:nonNegativeInteger"/><!-- 0, 1, 2... : number of internal interruptions -->
+      <xs:element name="external" type="xs:nonNegativeInteger"/><!-- 0, 1, 2... : number of external interruptions -->
+      <xs:element name="type" type="xs:string"/>
+      <xs:element name="author" type="xs:string"/>
+      <xs:element name="place" type="xs:string"/>
+      <xs:element name="description" type="xs:string"/>
+      <xs:element name="comment" type="xs:string"/><!-- story (Agile + Pomodoro mode) or comment (Pomodoro mode) -->
+      <xs:element name="storypoints" type="xs:decimal"/><!-- 0.0, 0.5, 1.0... (Agile + Pomodoro mode) or 0.0 (Pomodoro mode) -->
+      <xs:element name="iteration" type="xs:integer"/><!-- -1, 0, 1... (Agile + Pomodoro mode) or -1 (Pomodoro mode) -->
+      <xs:element name="priority" type="xs:integer"/><!-- -1, 0, 1... -->
+    </xs:sequence>
+  </xs:group>
+
+  <!-- complex elements --> 
+  <xs:element name="subtask">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="data" minOccurs="1" maxOccurs="1"/>	
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="task">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:group ref="data" minOccurs="1" maxOccurs="1"/>
+        <xs:element ref="subtask" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <!-- root element -->
+  <xs:element name="tasks">
+    <xs:complexType>
+      <xs:sequence>		
+        <xs:element ref="task" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

@@ -1,0 +1,7 @@
+pomodoro.db
+target
+.classpath
+.project
+.settings
+.vscode
+apache-maven-3.9.9

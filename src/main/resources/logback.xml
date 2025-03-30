@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright (C) 
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<configuration>
+  <!-- console appender -->
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <!-- documentation : http://logback.qos.ch/manual/layouts.html -->
+      <!-- %ex at the end of the pattern: display log in netbeans with coloring and links -->
+      <pattern>==================================================================================================================%n%d [%thread] %highlight(%-5level) [%file:%line] %msg%n%ex</pattern>
+    </encoder>
+  </appender>
+  <!-- file appender -->
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>${full_path_log}myAgilePomodoro.log</file><!-- the full path is set programmatically in teh Main class of the program -->
+    <append>false</append>
+    <encoder>
+      <pattern>==================================================================================================================%n%d [%thread] %-5level [%file:%line] - %msg%n</pattern>
+    </encoder>
+  </appender>
+  <root level="ERROR">
+    <appender-ref ref="STDOUT" />
+    <appender-ref ref="FILE" />
+  </root>
+</configuration>
