@@ -1,0 +1,549 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>myAgilePomodoro</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="pomodoro, agile, project management, time management" />
+    <link href="http://fonts.googleapis.com/css?family=Ebrima:200,300,400,600" rel="stylesheet" type="text/css" />
+	<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-panels.min.js"></script>
+	<script src="js/init.js"></script>
+    <noscript>
+    <link rel="stylesheet" href="css/skel-noscript.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-wide.css" />
+    </noscript>
+    <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
+    <!--[if lte IE 8]><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<!-- Pop-up css for image overlay -->
+	<!-- see https://www.jqueryscript.net/lightbox/Image-Lightbox-Popup-Plugin-jQuery.html -->
+	<style type="text/css">
+		.img-overlay {
+		  position: fixed;
+		  top: 90px;
+		  max-height: 80%;
+		  left: 50%;
+		  transform: translate(-50%, 0) scale(0, 0);
+		  z-index: 10;
+		  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+		  transition: all .3s ease;
+		}
+
+		.overlay-dark {
+		  top: 0;
+		  position: fixed;
+		  background-color: #000;
+		  opacity: .9;
+		  width: 100%;
+		  height: 100%;
+		  z-index: 5;
+		  display: none;
+		}
+	</style>
+	<!-- Meta tag for Google Search Console -->
+	<!-- https://victor2code.github.io/blog/2019/07/04/jekyll-github-pages-appear-on-Google.html -->
+	<meta name="google-site-verification" content="QRJ8a53XA7LqjXyYbI6RuXOont3XBCjKp1cbOlw1HbI" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div id="header" class="skel-panels-fixed">
+      <div class="top">
+        <!-- Logo -->
+        <div id="logo">
+          <!--<span class="image avatar48"><img src="images/avatar_myagilepomodoro.png" alt="" /></span>-->
+          <h1 id="title">myAgilePomodoro</h1>
+          <span class="byline">Agile + Pomodoro</span>
+        </div>
+        <!-- Nav -->
+        <nav id="nav">
+          <ul>
+            <li><a href="#home" id="home-link" class="skel-panels-ignoreHref"><span class="fa fa-home">Home</span></a></li>
+            <li><a href="#features" id="features-link" class="skel-panels-ignoreHref"><span class="fa fa-gear">Features</span></a></li>
+            <li><a href="#screens" id="screens-link" class="skel-panels-ignoreHref"><span class="fa fa-th">Screenshots</span></a></li>
+            <li><a href="#pomodoro" id="pomodoro-link" class="skel-panels-ignoreHref"><span class="fa fa-thumbs-up">Pomodoro vs mAP</span></a></li>
+            <li><a href="#subtasking" id="subtasking-link" class="skel-panels-ignoreHref"><span class="fa fa-thumbs-up">Sub-tasking vs mAP</span></a></li>
+			<li><a href="#scrum" id="scrum-link" class="skel-panels-ignoreHref"><span class="fa fa-thumbs-up">Scrum vs mAP</span></a></li>
+            <!--li><a href="#comments" id="comments-link" class="skel-panels-ignoreHref"><span class="fa fa-comments">Comments</span></a></li-->
+          </ul>          
+        </nav>
+		<!--div id="twitter">
+		<a href="https://twitter.com/philokaroo" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @philokaroo</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+		</div-->
+      </div>      
+    </div>
+    <!-- Main -->
+    <div id="main">
+      <!-- Intro -->
+      <section id="home" class="one">
+        <div class="container">
+          <img src="images/myagilepomodoro.png" alt="" /><a style="border-bottom: 0px" href="http://www.softpedia.com/get/Desktop-Enhancements/Clocks-Time-Management/myPomodoro.shtml" target="_blank"><img src="images/softpedia_100_free.png" alt="" /></a>
+          <header>
+            <h2 class="alt"><strong>myAgilePomodoro</strong></h2>            
+            <h3 class="alt">Agile Time Management Freeware</h3>
+          </header>
+          <p>myAgilePomodoro is a time management software that brings you the best of two worlds: Agile's most common practices and the <a href="http://pomodorotechnique.com/" target="_blank">Pomodoro Technique&#174;</a>.<br><br>
+            mAP is a free open-source, GPLv3, Java 6 to 14, 32/64-bit, utf-8, multilingual,<br>
+            standalone and portable application (no installer).</p>
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <!--a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=DK5Y33SP5FU26" class="button scrolly">Donate</a-->
+          </footer>
+        </div>
+      </section>
+      <!-- Portfolio -->
+      <section id="features" class="two">
+        <div class="container">
+          <header>
+            <h2>Main features</h2>
+          </header>
+          <p>mAP is flexible: use it as a Agile software, a Pomodoro timer or simply a ToDo list.<br>
+            mAP is meant for individuals and small size teams in war rooms.</p>          
+          <ul>
+            <li><strong>Pomodoro</strong>: short / long breaks, interruptions / unplanned tasks, overestimations...</li>           
+            <li><strong>Pomodoro</strong>: full implementation of the technique + Sub-tasking</li>
+            <li><strong>Import / Export</strong>: CSV, Excel 2003/07, XML, Google Drive</li> 
+            <li><strong>Agile</strong>: backlog management, story points, iteration...</li>
+            <li><strong>Timer</strong>: ticking / ringing, mute, pause, resizing...</li>
+            <li><strong>Charts</strong>: burn-down / up, target, scope, guide</li>
+            <li><strong>Database</strong>: local SQLite / remote MySQL</li>
+            <li><strong>System tray</strong>: progress icon, messages</li>
+            <li><strong>Multilingual</strong>: English, French, Italian</li>
+			<li><strong>Look and feel</strong>: themes</li>
+          </ul>                    
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>
+          </footer>
+        </div>
+      </section>
+      <!-- Screens -->
+      <section id="screens" class="three">
+        <div class="container">
+          <header>
+            <h2>Screenshots</h2>
+          </header>          
+          <div class="row">
+            <div class="4u">
+              <article class="item">
+                <img src="images/3-iterationbacklog.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Iteration</h3>
+                </header>
+              </article>
+              <article class="item">
+                <img src="images/4-releasebacklog.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Release</h3>
+                </header>
+              </article>
+            </div>
+            <div class="4u">
+              <article class="item">
+                <img src="images/1-timer.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Timer</h3>
+                </header>
+              </article>
+              <article class="item">
+                <img src="images/5-charts.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Charts</h3>
+                </header>
+              </article>
+            </div>
+            <div class="4u">
+              <article class="item">
+                <img src="images/2-backlog.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Backlog</h3>
+                </header>
+              </article>
+              <article class="item">
+                <img src="images/6-preferences.png" alt="" class="image full img-popup" />
+                <header>
+                  <h3>Preferences</h3>
+                </header>
+              </article>
+            </div>
+          </div>                              
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>
+          </footer>
+        </div>
+      </section>
+      <!-- Pomodoro -->
+      <section id="pomodoro" class="four">
+        <div class="container">
+          <header>
+            <h2>Pomodoro Technique&#174;'s <span style="background-color: white">rules*</span> vs <span style="color:#D83636; background-color: white">mAP</span></h2>
+			* as per the <a href="https://francescocirillo.com/products/the-pomodoro-technique-book-us-edition" target="_blank">official book of the Pomodoro Technique&#174;</a>.
+          </header>
+		  <p>Although mAP can be used to strictly follow the rules, it is flexible in many ways.</p>		  
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>A Pomodoro Consists of 25 minutes Plus a Five-Minute Break</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">Configurable.<br>mAP allows shortening / lengthening pomodoros and short breaks.<br>mAP allows stopping automatically the timer at the end of pomodoros (workflow interruption).</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>After Every Four Pomodoros Comes a 15-30 Minute Break.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">Configurable.<br>mAP allows shortening / lengthening long breaks.<br>mAP allows restarting a Set after stopping the timer.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>The Pomodoro Is Indivisible. There are no half or quarter Pomodoros.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows voiding and shortening pomodoros.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>If a Pomodoro Begins, It Has to Ring: 
+                    <br>--> If a Pomodoro is interrupted definitively – i.e. the interruption isn’t handled – it’s considered void, never begun, and it can’t be recorded with an X.
+                    <br>--> If an activity is completed once a Pomodoro has already begun, continue reviewing the same activity until the Pomodoro rings.
+                    </h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">Ringing and ticking sounds are customizable and possible to disable.
+                  <br>--> mAP allows pausing pomodoros' progression for later use.
+                  <br>--> mAP allows shortening pomodoros.
+                  </h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Protect the Pomodoro. Inform effectively, negotiate quickly to reschedule the interruption, call back the person who interrupted you as agreed.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows creating unplanned tasks and subtasks at any time and internal and external interruption tasks and subtasks during pomodoros.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>If It Lasts More Than 5-7 Pomodoros, Break It Down. Complex activities should be divided into several activities.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows duplicating tasks and creating subtasks.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>If It Lasts Less Than One Pomodoro, Add It Up. Simple tasks can be combined.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows merging tasks and subtasks.<br>mAP allows starting tasks and subtasks with no estimation.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Results Are Achieved Pomodoro after Pomodoro.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP measures accuracy and analyses errors (diff). <br>mAP allows creating burn-up and burndown charts.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>The Next Pomodoro Will Go Better.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">Just stick to mAP ;-)</h3>
+                </header>
+              </article>
+            </div>
+          </div>          
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>
+          </footer>
+    </div>
+  </section>
+  <!-- subtasks -->
+      <section id="subtasking" class="four">
+        <div class="container">
+          <header>
+            <h2>Sub-tasking <span style="background-color: white">rules</span> vs <span style="color:#D83636; background-color: white">mAP</span></h2>			
+          </header>
+		  <p>mAP implements two new rules to support sub-tasking.<br>We suggest these rules be added to the Pomodoro Technique&#174;’s specification.</p>		  
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>All the rules of the Pomodoro Technique&#174; apply to sub-activities.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows creating, estimating and running subtasks.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Activities with sub-activities shouldn’t be estimated. Only sub-activities should.</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP goes one step forward: it allows estimating and running parent tasks. Any change of pomodoros in a subtask is equally applied to its parent task.</h3>
+                </header>
+              </article>
+            </div>
+          </div>         
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>
+          </footer>
+    </div>
+  </section> 
+	<!-- Scrum -->
+    <section id="scrum" class="four">
+        <div class="container">
+          <header>
+            <h2>Scrum's <span style="background-color: white">practices*</span> vs <span style="color:#D83636; background-color: white">mAP</span></h2>
+			* practices, artifacts, indicators...
+          </header>		  
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Backlogs</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows ordering the Backlog (Product Backlog), prioritizing the Iteration Backlog (Sprint Backlog) and managing the Release Backlog.</h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Meetings</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP may be used to monitor Sprint planning, daily Scrum, Sprint review and Sprint retrospective meetings with the Pomodoro Technique&#174; (having breaks during meetings is not a bad idea).<br>
+					Simply create tasks with a made-up type and set the estimate (time boxing). In the preferences, set the length of pomodoros and breaks that fits the meeting best.
+				  </h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Items</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows creating tasks and subtasks (items) with a set of pre-defined types (User Story, Epic…).<br>
+					For convenience, tasks with type "User Story" present a skeleton of story ("As a {role}, I can…").
+				  </h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Sprints</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows setting the Iteration (Sprint) number on the tasks.<br>
+					mAP allows iteration with number 0 for project ramp-up, initial technical stories, spikes…<br>
+					mAP allows moving tasks from the Iteration Backlog back to the Backlog (descoping).<br>
+					mAP allows moving tasks from the Iteration Backlog (In progress) to the Release Backlog (Done).<br>
+					mAP allows setting tasks to Done-Done in the Release Backlog.<br>
+					mAP allows re-opening tasks from the Release Backlog back to the Backlog (not Done-Done).<br>
+					mAP allows prioritizing tasks AND subtasks in the Iteration Backlog.
+                  </h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Indicators</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP shows on the backlogs’ title bar the sum of story points (SP) of the tasks. For convenience, on the Release Backlog’s title bar, and when tasks are selected, it reads "V" (for Velocity).<br>
+					mAP also shows the Productivity (story points per day) on the Release Backlog’s title bar when tasks are selected.					
+				  </h3>
+                </header>
+              </article>
+            </div>
+          </div>
+          <div class="row">
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3>Charts</h3>
+                </header>
+              </article>																	
+            </div>
+            <div class="6u">
+              <article class="item">
+                <header>
+                  <h3 style="color:#D83636">mAP allows creating burn-up, burn-down charts with target, guide and scope lines upon different configurable set of tasks.<br>
+					A Scrum Master can easily create a Daily Burndown chart as a Product Owner can issue a Release Product Burn-up chart based on dates or a range of iterations.
+				  </h3>
+                </header>
+              </article>
+            </div>
+          </div>		          
+          <footer>
+            <a href="http://sourceforge.net/projects/mypomodoro/" class="button scrolly">Download</a>
+          </footer>
+    </div>
+  </section> 
+  <!-- Comments --><!-- disqus -->
+  <!--section id="comments" class="five">
+    <div class="container">
+      <header>
+        <h2>Comments</h2>
+      </header>
+      <div style="color:black">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+          var disqus_shortname = 'myagilepomodoro';
+
+          /* * * DON'T EDIT BELOW THIS LINE * * */
+          (function() {
+            var dsq = document.createElement('script');
+            dsq.type = 'text/javascript';
+            dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+          })();
+        </script>
+        <noscript>Please enable JavaScript to view the comments</noscript>
+      </div>
+    </div>
+  </section-->
+</div>
+<!-- Footer -->
+<div id="footer">
+  <!-- Copyright -->
+  <div class="copyright">
+    <p>&copy; myAgilePomodoro. All rights reserved.</p>
+    <ul class="menu">
+      <li>Design: <a href="http://html5up.net" target="_blank">HTML5 UP</a></li>
+    </ul>
+  </div>
+</div>
+<!-- image overlay for image popup -->
+<div class="overlay-dark"></div>
+<img class="img-overlay">
+<script src="js/image-popup.js" type="text/javascript"></script><!-- requires jquery min-->
+</body>
+</html>
