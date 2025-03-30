@@ -20,12 +20,8 @@ Features:
 - Multilingual: English, French, Italian
 - Look and feel: themes
 
+Technical requirements:
+- Oracle Java or Open JDK 6+
+- Read/Write access to the local file system (a local database is created by mAP)
+
 For more : <a href="https://philkaroo.github.io/myagilepomodoro/" target="_blank">myAgilePomodoro's web site</a>
-
-WORK IN PROGRESS:
-
-Go to the Releases page to download :
-- the executable file: .exe (Windows) or .jar (MAC, Linux...)
-- the user guide
-- the install/upgrade guide
-- the Pomodoro Technique® v1.3 free book
