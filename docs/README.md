@@ -1,0 +1,1 @@
+Note (mars 2025) : GitHub pages requires the index.html page to be located either in /(root) or /docs. On the repository page, go to Settings > Pages, then Deploy from a branch and select /main and /docs
